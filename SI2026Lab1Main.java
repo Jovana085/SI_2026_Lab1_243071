@@ -145,5 +145,11 @@ public class SI2026Lab1Main {
         System.out.println("\nAvailable books: " + library.countAvailableBooks());
         System.out.println("\nBorrowed books:");
         library.printBorrowedBooks();
+
+        System.out.println("\nProgramming books:");
+library.printBooksByGenre("Programming");
+
+        System.out.println("\nDystopian books:");
+library.printBooksByGenre("Dystopian");
     }
 }
