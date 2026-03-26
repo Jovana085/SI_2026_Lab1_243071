@@ -53,6 +53,11 @@ class Library {
 
     // TODO: Implement in branch feature-search-books
     public boolean searchBookByTitle(String title) {
+        for (Book book : books) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -62,7 +67,7 @@ class Library {
             if (book.getTitle().equalsIgnoreCase(title)) {
                 if (!book.isBorrowed()) {
                     book.setBorrowed(true);
-                    System.out.println("Book borrowed.");
+                    System.out.println("Borrowed successfully.");
                 } else {
                     System.out.println("Book is already borrowed.");
                 }
@@ -89,6 +94,11 @@ class Library {
 
     // TODO: Implement in branch feature-genre-report
     public void printBooksByGenre(String genre) {
+        for (Book book : books) {
+            if (book.getGenre().equalsIgnoreCase(genre)) {
+                System.out.println(book);
+            }
+        }
     }
 
     public int countAvailableBooks() {
@@ -120,5 +130,20 @@ public class SI2026Lab1Main {
         library.addBook(new Book("1984", "George Orwell", "Dystopian"));
 
         System.out.println("Library initialized.");
+
+        System.out.println("Is 'Clean Code' in library? " + library.searchBookByTitle("Clean Code"));
+        System.out.println("Is 'Harry Potter' in library? " + library.searchBookByTitle("Harry Potter"));
+
+        System.out.println("\nFantasy books:");
+        library.printBooksByGenre("Fantasy");
+
+        library.borrowBook("1984");
+        library.borrowBook("1984");
+        library.returnBook("1984");
+        library.returnBook("1984");
+
+        System.out.println("\nAvailable books: " + library.countAvailableBooks());
+        System.out.println("\nBorrowed books:");
+        library.printBorrowedBooks();
     }
 }
