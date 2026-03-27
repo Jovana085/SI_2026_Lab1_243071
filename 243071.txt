@@ -1,11 +1,12 @@
-1. git checkout -b feature-search-books # креирање гранка и префрлување
-git add SI2026Lab1Main.java # додавање промени
-git commit -m "Implement book search and other library methods" # commit
-git push -u origin feature-search-books # push на remote
-git checkout master # префрлување на master
-git merge feature-search-books # merge на feature гранка во master
-git push # пуш на master
-git log --oneline --graph --all # преглед на лог
+                        Објаснување на командите
+1. git checkout -b feature-search-books - креирање гранка и префрлување
+2. git add SI2026Lab1Main.java - додавање промени
+3. git commit -m "Implement book search and other library methods" - commit
+4. git push -u origin feature-search-books - push на remote
+5. git checkout master - префрлување на master
+6. git merge feature-search-books - merge на feature гранка во master
+7. git push - пуш на master
+8. git log --oneline --graph --all - преглед на лог
 Излез: * 0a0acc8 (HEAD -> master, origin/master, origin/feature-search-books, feature-search-books) Add starter code
 
 * adc1c88 Initial commit
@@ -61,3 +62,30 @@ Merge-от не беше fast-forward бидејќи и двете гранки 
 git add logs.txt 243071.txt
 git commit -m "Final commit"
 27. git push origin master - Ова го испраќа финалниот commit заедно со logs.txt и 243071.txt на оддалечениот репозиториум.
+
+Дел2
+28. 28. Клонирање на fork репозиториум:
+```bash
+git clone https://github.com/Jovana085/SI_2026_Lab1_203043.git
+cd SI_2026_Lab1_203043
+29. git checkout -b 243071-library-update - Креирање е нова гранка за измени
+30. echo "Jovana Micovska" > 243071.txt
+echo "jovana.micovska@students.finki.ukim.mk" >> 243071.txt
+cat 243071.txt - Креирање на датотеката 243071.txt со име и емаил и приказ на содржината
+
+31. git add 243071.txt
+git commit -m "Add 243071.txt with name and email"
+git push origin 243071-library-update - Датотеката е испратена на оддалечениот fork репозиториум. GitHub нуди линк за креирање на pull request.
+32. Во постоечката датотека SI2026Lab1Main.java е додаден коментар:
+// Updated by 243071
+33. git add SI2026Lab1Main.java
+git commit -m "Add comment Updated by 243071"
+git commit --amend -m "Add fork contribution"
+git push origin 243071-library-update - Commit-от е извршен и push-от е обновен со --amend за промена на порака
+34. git push origin 243071-library-update - Синхронизација на гранката со оддалечениот fork
+35. Создаден е pull request од гранката 243071-library-update кон master на оригиналниот репозиториум (markopetrov1:master).
+36. Името на pull request-от е:
+243071-FORK
+37. Описот на PR содржи две линии:
+Jovana Micovska
+Fork contribution for lab 1
