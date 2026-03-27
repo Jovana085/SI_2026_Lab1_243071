@@ -1,17 +1,24 @@
-1. git checkout -b feature-search-books   # креирање гранка и префрлување
-2. git add SI2026Lab1Main.java            # додавање промени
-3. git commit -m "Implement book search and other library methods"  # commit
-4. git push -u origin feature-search-books  # push на remote
-5. git checkout master                     # префрлување на master
-6. git merge feature-search-books          # merge на feature гранка во master
-7. git push                                # пуш на master
-8. git log --oneline --graph --all         # преглед на лог
+1. git checkout -b feature-search-books # креирање гранка и префрлување
+git add SI2026Lab1Main.java # додавање промени
+git commit -m "Implement book search and other library methods" # commit
+git push -u origin feature-search-books # push на remote
+git checkout master # префрлување на master
+git merge feature-search-books # merge на feature гранка во master
+git push # пуш на master
+git log --oneline --graph --all # преглед на лог
+Излез: * 0a0acc8 (HEAD -> master, origin/master, origin/feature-search-books, feature-search-books) Add starter code
 
-Излез: \* 0a0acc8 (HEAD -> master, origin/master, origin/feature-search-books, feature-search-books) Add starter code
-
-\* adc1c88 Initial commit
-
+* adc1c88 Initial commit
 Merge тип: Fast-forward merge, бидејќи master немаше свои промени и едноставно се придвижи до последниот commit од feature-search-books.
 
+22. Да, настана конфликт при спојување на гранката master во feature-borrow-book.
+Конфликтот беше решен рачно со уредување на датотеката SI2026Lab1Main.java, при што беше избрана една од понудените верзии и беа отстранети конфликтните ознаки (<<<<<<<, =======, >>>>>>>). Беше употребена recursive merge стратегија.
+Излез од git status по завршување на merge-от:
 
+On branch feature-borrow-book
+nothing to commit, working tree clean
+23. Тип на merge: Fast-forward
+По ажурирање на гранката feature-genre-report со master, спојувањето можеше да се изврши како fast-forward бидејќи немаше дополнителни commits во master.
 
+24. Тип на merge: Recursive merge
+Merge-от не беше fast-forward бидејќи и двете гранки (master и feature-borrow-book) имаа сопствени commits, па Git креираше merge commit.
