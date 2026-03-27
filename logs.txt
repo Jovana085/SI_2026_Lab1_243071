@@ -1,0 +1,20 @@
+* 7683b12 Update 243071.txt with latest commands
+* 7ba22ad Remove commands.md, keep only 243071.txt
+* 0029c04 Rename commands.md to 243071.txt
+*   c026b21 Merge branch 'feature-borrow-book'
+|\  
+| *   e30dd49 Merge branch 'master' into feature-borrow-book
+| |\  
+| * | 4a6b3aa Implement borrow book
+* | |   5ba8505 Merge branch 'feature-genre-report'
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 71f7955 Implement genre report
+| |/  
+* / 3d18336 Update borrow message on master
+|/  
+* ecf29a9 Implement search and genre methods correctly
+* 4513513 Implement book search
+* 0a0acc8 Add starter code
+* adc1c88 Initial commit
