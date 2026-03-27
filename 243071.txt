@@ -11,6 +11,40 @@ git log --oneline --graph --all # преглед на лог
 * adc1c88 Initial commit
 Merge тип: Fast-forward merge, бидејќи master немаше свои промени и едноставно се придвижи до последниот commit од feature-search-books.
 
+9. git checkout feature-search-books - Се префрлувам на гранката feature-search-books
+
+10. git add SI2026Lab1Main.java - додава изменети датотеки за commit.
+git add .
+git commit -m "Implement book search" - создава snapshot на измените со описна порака.
+
+11. git push origin feature-search-books - испраќа локални commits кон оддалечениот репозиториум.
+12. git checkout master
+git merge feature-search-books - спојување на друга гранка со тековната 
+13. Резултат: Fast-forward merge (немаше конфликти, директно поместување на HEAD).Направив проверка со: git log --oneline --graph --all
+Лог покажува дека feature-search-books е споен во master без конфликт.
+14. git push origin master - Синхронизација на master со оддалечениот репозиториум
+15. git branch feature-borrow-book
+git branch feature-genre-report - Креирање на нови гранки feature-borrow-book и feature-genre-report
+16. git checkout feature-borrow-book
+git add .
+git commit -m "Implement borrow book"
+ - Премин на гранката и commit на измените.
+Резултат: Commit 4a6b3aa, метод за позајмување книги имплементиран.
+17. git checkout master
+git add .
+git commit -m "Update borrow message on master"
+Commit за промена на порака во master гранка.
+Статус: Нема конфликти, commit успешен.
+18. git checkout feature-genre-report
+notepad SI2026Lab1Main.java
+git add SI2026Lab1Main.java
+git commit -m "Implement genre report" - Имплементација и commit на метод за печатење книги по жанр. Commit успешен, гранката подготвена за merge.
+19 и 20 Push и pull request на двете гранки кон master
+git push origin feature-borrow-book
+git push origin feature-genre-report
+21. git checkout feature-borrow-book
+git merge master - Merge на master во feature-borrow-book
+
 22. Да, настана конфликт при спојување на гранката master во feature-borrow-book.
 Конфликтот беше решен рачно со уредување на датотеката SI2026Lab1Main.java, при што беше избрана една од понудените верзии и беа отстранети конфликтните ознаки (<<<<<<<, =======, >>>>>>>). Беше употребена recursive merge стратегија.
 Излез од git status по завршување на merge-от:
@@ -22,3 +56,8 @@ nothing to commit, working tree clean
 
 24. Тип на merge: Recursive merge
 Merge-от не беше fast-forward бидејќи и двете гранки (master и feature-borrow-book) имаа сопствени commits, па Git креираше merge commit.
+
+26. git log --oneline --graph --all > logs.txt - ја снима целата историја на комитови со графичко прикажување и кратки идентификатори во датотека logs.txt.
+git add logs.txt 243071.txt
+git commit -m "Final commit"
+27. git push origin master - Ова го испраќа финалниот commit заедно со logs.txt и 243071.txt на оддалечениот репозиториум.
